@@ -1,6 +1,6 @@
 # vue-blog
 
-> mobile blog vue pro
+> vue blog vue pro
 
 ## Build Setup
 
