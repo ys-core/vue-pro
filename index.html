@@ -2,9 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="shortcut icon" href="src/assets/Icon.png"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="./src/assets/Icon.png" /> 
     <title>前端小智</title>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="description" content="这是个人学习Vue后自己搭建的个人博客">
+	<meta name="keywords" content="前端小智 个人博客 Vue博客">
+	<meta name="author" content="yongsonglee.top 前端小智">
     <!-- <script src="https://cdn.tiny.cloud/1/zz6kufduyz69ewv614r0rudtr2snd9pr3bzyeignjc1tgn5e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
   </head>
   <body>
@@ -13,4 +19,18 @@
 
     
   </body>
+  <script>
+	  (function(){
+			var bp = document.createElement('script');
+			var curProtocol = window.location.protocol.split(':')[0];
+			if (curProtocol === 'https') {
+				bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+			}
+			else {
+				bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			}
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bp, s);
+		})();
+  </script>
 </html>
