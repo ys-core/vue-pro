@@ -243,12 +243,13 @@ export default {
 @media only screen and (min-width:540px){
 
 .comment_warpper{
-        max-width: 60%;
-        width: 1000px;
         margin: 0 auto;
         background: url("../assets/wbg.jpg") repeat;
         z-index: 1;
         .board_inputting{
+			max-width: 60%;
+			width: 1000px;
+			margin: 0 auto;
             position: sticky;
             top: 0;
             z-index: 10;
@@ -264,6 +265,8 @@ export default {
     .comment_item{
         // width: 60%;
         // margin: 0 10% 0 20%;
+		max-width: 60%;
+		width: 1000px;
         margin: 1rem auto 0.8rem;
         padding: 1rem 1rem 0 0;
         // min-height: 10vh;  
