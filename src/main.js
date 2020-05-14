@@ -14,8 +14,8 @@ import ElementUI from 'element-ui';    // element-ui
 import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en'
 
-import echarts from 'echarts'     // echarts  
-Vue.prototype.$echarts = echarts
+// import echarts from 'echarts'     // echarts  
+// Vue.prototype.$echarts = echarts
 
 import axios from 'axios'                        // axios
 Vue.prototype.$axios = axios
