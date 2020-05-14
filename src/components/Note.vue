@@ -67,13 +67,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @media only screen and (min-width:540px){
+
+@keyframes flashBorder {
+   0%{ }
+    25%{  }
+    50%{  }
+    75%{  }
+}
+@-webkit-keyframes flashBorder {
+    0%{  }
+    25%{  }
+    50%{  }
+    75%{  }
+}
 .note-warpper{
+	background: url("../assets/wbg.jpg") repeat;
     .note-item{
-        width: 68%;
+        width: 1000px;
+        max-width: 80%;
+        min-height: 100%;
         margin: 0 auto;
         padding: 2rem 0;
         padding: 2rem 0;
+        font-family: "Microsoft Yahei";
         .year{
+          font-family:  ceil;
           display: block;
           font-weight: bolder;
           font-style: italic;
@@ -93,7 +111,9 @@ export default {
           & >>> pre {
              background-color: black;
              color: white;
-             padding: 1rem
+             padding: 1rem;
+             font-style: italic;
+             font-family:  ceil;
           }
         }
     }

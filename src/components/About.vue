@@ -65,12 +65,26 @@ export default {
 
 @media only screen and (min-width:540px){
 
+
+@keyframes AvatarRotate{
+	0%{}
+	50%{transform: rotate(-180deg)}
+	100%{transform: rotate(-360deg)}
+}
+@-webkit-keyframes AvatarRotate{
+	0%{}
+	50%{transform: rotate(-180deg)}
+	100%{transform: rotate(-360deg)}
+}
+body{
+	background: url("../assets/wbg.jpg") repeat;
+}
 .about-uper{
+
     width: 70%;
     padding-top: 10vh;
     margin: 0 auto;
     // background: red;
-    // border: 1px solid yellowgreen;
     overflow: hidden;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;;
     .about-left{
@@ -79,7 +93,7 @@ export default {
         height: 80vh;
         float: left;
         margin: 10px;
-        background: rgba(173,216,230,0.5);
+        //background: rgba(173,216,230,0.5);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -98,7 +112,7 @@ export default {
     }
     .about-right{
         overflow: hidden;
-        background: rgb(228, 228, 228);
+        //background: rgb(228, 228, 228);
         margin-top: 10px;
         padding-top: 4vh;
         padding-right: 80px;

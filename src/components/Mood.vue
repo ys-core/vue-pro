@@ -103,8 +103,11 @@ export default {
 <style lang="scss" scoped>
 @media only screen and (min-width:540px){
 .mood-warpper{
+	background: url("../assets/wbg.jpg") repeat;
+    width: 100%;
     .mood-core{
-        width: 60%;
+        width: 1000px;
+        max-width: 70%;
         margin: 0 auto;
         padding-left: 1%;
         padding-top: 2rem;

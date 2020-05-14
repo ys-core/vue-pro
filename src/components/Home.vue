@@ -30,7 +30,7 @@
                         </div>
                   </swiper-slide>
                   <swiper-slide class="swiper-slide item4">
-                        <div class="core-item4 slideInLeft"  data-wow-duration="2s" data-wow-delay="5s">
+                        <div class="core-item4 slideInLeft" >
                             <!-- <p>真正你好的比坏的多，但个又一个圈生的朋友。</p> -->
                        </div>
                   </swiper-slide>
@@ -57,7 +57,6 @@
 
 import { mapState, mapActions, mapMutations } from 'vuex'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import { WOW } from 'wowjs'
 import 'swiper/css/swiper.css'
 
 export default {
@@ -102,7 +101,6 @@ export default {
       }
   },
   mounted(){
-      new WOW({ live : false}).init()
       // console.log('mounted..')
       // console.log(this.$store.state.loading)
       // this.$store.dispatch('enableLoading')

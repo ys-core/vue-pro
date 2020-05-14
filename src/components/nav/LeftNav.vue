@@ -45,7 +45,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        box-shadow:  inset 0px 10px 20px gray;
+        //box-shadow:  inset 0px 10px 20px gray;
         // background-image: linear-gradient(to top right, rgb(229, 255, 255), rgb(214, 227, 230));
         // color: black;
         ul{

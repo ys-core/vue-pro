@@ -13,7 +13,7 @@
                     <li><router-link to="more">更多..</router-link></li>
                 </ul>
             </div>
-            <div class="core-item wow slideInLeft" data-wow-duration="2s" data-wow-delay="1s">
+            <div class="core-item">
                  <p>真正的朋友，懂得沉默，懂得等待，他知道你想跟他说的话自然会跟他说，他会对你的好适可而止，它知道你好的比坏的多，但永远不会告诉你你有多好，就像他永远不会告诉你他有多爱你一样。时间把人划分成一个又一个圈，只有永远和你站在同一个圈子里的人，才能成为你可以守护一生的朋友。</p>
             </div>
                 
@@ -28,18 +28,9 @@
                     <p>夕阳缓缓地沉了下去，它似乎怕勾起我们无限的离愁，于是选择了安静地离去。但这只是短暂的分别，明早它就会回来了，将以另一种方式回到我们的身边。</p>
                 </div>
             </div>
-            <div class="swiper-slide item4">
-                <div class="core-item4 slideInLeft"  data-wow-duration="2s" data-wow-delay="5s">
-                    <p>真正你好的比坏的多，但个又一个圈生的朋友。</p>
-               </div>
-            </div>
-            <div class="swiper-slide item5">Slide 5</div>
-            <div class="swiper-slide item6">Slide 6</div>
-            <div class="swiper-slide item7">Slide 7</div>
         </div>
 
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+  
     </div>
 
          
@@ -50,7 +41,7 @@
 
 import { mapState, mapActions, mapMutations } from 'vuex'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import { WOW } from 'wowjs'
+// import { WOW } from 'wowjs'
 // import Swiper from 'swiper'
 // import 'swiper/css/swiper.min.css'
 
@@ -61,25 +52,25 @@ export default {
       articles: [],
       footerShowing: false,
        swiperOption: {
-            direction: 'vertical',
-            slidesPerView: 1,
-            effect: 'fade',   // fade, cube , coverflow , flip 
-            speed: 800,
-            spaceBetween: 0,
-            mousewheel: {
-                forceToAxis: false,
-                releaseOnEdges: false,
-                invert: false,
-                sensitivity: 100,
-            },
-            autoplay: {
-                delay: 2000,	
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                // clickable: true,
-                type: 'bullets'
-            },
+            // direction: 'vertical',
+            // slidesPerView: 1,
+            // effect: 'fade',   // fade, cube , coverflow , flip 
+            // speed: 800,
+            // spaceBetween: 0,
+            // mousewheel: {
+            //     forceToAxis: false,
+            //     releaseOnEdges: false,
+            //     invert: false,
+            //     sensitivity: 100,
+            // },
+            // autoplay: {
+            //     delay: 2000,	
+            // },
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     // clickable: true,
+            //     type: 'bullets'
+            // },
        }
     }
   },
@@ -95,7 +86,7 @@ export default {
     swiper: directive
   },
   mounted(){
-      new WOW({ live : false}).init()
+
 
   },
   computed:{
@@ -148,10 +139,8 @@ html, body {
     height: 100%;
 }
 body {
-    background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color:#000;
     margin: 0;
     padding: 0;
 }
@@ -162,15 +151,27 @@ body {
     margin-right: auto;
 }
 .swiper-slide {
-    /* text-align: center; */
-    /* font-size: 18px; */
     background: #fff;
 
+}
+@keyframes switchbg {
+   0%{ background-image: url('../images/bulb.png'); }
+    25%{ background-image: url('../images/love.jpg'); }
+    50%{  background-image: url('../images/sunset-2.jpg');}
+    75%{ background-image: url('../images/stairs.jpg'); }
+}
+@-webkit-keyframes switchbg {
+    0%{ background-image: url('../images/bulb.png'); }
+    25%{ background-image: url('../images/love.jpg'); }
+    50%{  background-image: url('../images/sunset-2.jpg');}
+    75%{ background-image: url('../images/stairs.jpg'); }
 }
 .item1{
     background-image: url('../images/bulb.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    animation: switchbg 20s infinite linear;
+    -webkit-animation: switchbg 20s infinite linear;
 }
 .item2{
     background-image: url('../images/love.jpg');
@@ -179,26 +180,6 @@ body {
 }
 .item3{
     background-image: url('../images/sunset-2.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.item4{
-    background-image: url('../images/bg-3.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.item5{
-    background-image: url('../images/heart.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.item6{
-    background-image: url('../images/bg-2.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.item7{
-    background-image: url('../images/stairs.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -245,8 +226,23 @@ body {
     position: absolute;
     bottom: 14vh;
     left: 20vw;
-    box-shadow: 10px 10px 20px #fff;
+    box-shadow: 0 0 0 #fff;
+    transform-style: preserve-3d;
+    animation: borderAnimation 6s infinite linear;
+    -webkit-animation: borderAnimation 6s infinite linear;
 }
+
+@keyframes borderAnimation {
+    0%{ box-shadow: 10px 10px 20px #fff; }
+    50%{  box-shadow: 0 0 0 rgb(152, 212, 11); transform: translateX(-20deg); }
+    100%{  box-shadow: 10px 10px 20px #fff; }
+}
+@-webkit-keyframes borderAnimation {
+    0%{ box-shadow: 10px 10px 20px #fff; }
+    50%{  box-shadow: 0 0 0 rgb(16, 107, 72); transform: translateX(-20deg);}
+    100%{  box-shadow: 10px 10px 20px #fff; }
+}
+
 .core-item>p{
     color: #fff;
     font-size: 0.8rem;

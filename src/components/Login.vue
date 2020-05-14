@@ -140,10 +140,11 @@ export default {
     .login-core{
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,.8);
-        font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;;
+        // background: rgba(0,0,0,.8);
+        // font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;;
         .loginPage{
             position: absolute;
+            background: lightyellow;
             top: 50%;
             left: 50%;
             margin-top: -10rem;
@@ -151,12 +152,16 @@ export default {
             width: 28rem;
             min-height: 20rem;
             padding: 2rem;
-            border-radius: 8px;
+            // border-radius: 8px;
             box-sizing: border-box;
-            border: 1px solid gray;
+            // border: 1px solid gray;
             // box-shadow: inset 0 10px 5px gray;
             // background-color: #fff;
             // background-color: purple;
+            h1{
+                font-size: 2rem;
+                font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
+            }           
             span{
                 position: absolute;
                 right: 1rem;

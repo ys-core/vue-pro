@@ -118,13 +118,14 @@ export default {
 @media only screen and (min-width:540px){
 .blog_warpper{
     // background: rgba(236, 142, 126, 0.9);
+	 background: url("../assets/wbg.jpg") repeat;
      font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
      .blog_core{
-        width: 60%;
+		width: 1000px;
         min-height: 100vh;
         margin: 0 auto;
         padding-bottom: 2rem;
-        box-shadow: inset 0 1rem 2rem gray;    /* #abb8c4a6 */
+        /* box-shadow: inset 0 1rem 2rem gray;*/    /* #abb8c4a6 */
         .blog_nav{
             position: sticky;
             padding: 5rem 0 2rem 0;

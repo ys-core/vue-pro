@@ -127,14 +127,16 @@ export default {
 @media only screen and (min-width:540px){
 
 .blogger_warpper{
+	background: url("../assets/wbg.jpg") repeat;
     #blogger_core{
-        width: 70%;
-        background: rgba(235, 192, 235, 0.08);
+		width: 1000px;
+		min-width: 56%;
+        /* background: rgba(235, 192, 235, 0.08); */
         padding: 2rem 2rem 4rem 3rem;
         margin: 0 auto;
         margin-bottom: 4rem;
         min-height: 1000px;
-        box-shadow: inset 0px 16px 12px gray;
+        /* box-shadow: inset 0px 16px 12px gray; */
         border-bottom-left-radius: 2rem;
         border-bottom-right-radius: 2rem;
         h2{
@@ -183,7 +185,9 @@ export default {
         
     }
     .blog-board-warpper{
-        width: 68%;
+		width: 1000px;
+		min-width: 56%;
+      
         margin: 0 auto;
     }
     .return_top_btn{

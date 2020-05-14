@@ -1,6 +1,7 @@
 <template>
-  <div class="comment_warpper animated zoomIn">
-  <div class="board_inputting animated fadeInDown">
+  <div class="comment_warpper">
+    <left-nav />
+  <div class="board_inputting">
       <div class="comment_inputting_box">
            <!-- <editor
                     api-key="zz6kufduyz69ewv614r0rudtr2snd9pr3bzyeignjc1tgn5e"
@@ -35,7 +36,7 @@
           </div>
       </div>
   </div>
-  <div v-for="(item,index) in comments" :key="item._id" class="comment_item animated slideInRight">
+  <div v-for="(item,index) in comments" :key="item._id" class="comment_item">
         <div  class="avatar">
            <Avatar :style="randomColor(index)" size="small" icon="ios-person" ></Avatar>
         </div>
@@ -65,6 +66,7 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import { mapState, mapActions } from 'vuex'
+import LeftNav from './nav/LeftNav'
 
 export default {
   name: 'board',
@@ -79,7 +81,8 @@ export default {
   components:{
     Footer,
     // editor: Editor,
-    quillEditor
+    quillEditor,
+    LeftNav
   },
   mounted(){
     this.enableLoading()
@@ -238,28 +241,32 @@ export default {
 <style lang="scss" scoped>
 
 @media only screen and (min-width:540px){
+
 .comment_warpper{
-    // background-image: url('../assets/images/board-bg.svg');
-    background-attachment: fixed;
-    .board_inputting{
-        width: 60%;
-        margin: 2rem 10% 2rem 20%;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        .comment_inputting_box{
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            .submit_reset_btn{
-              padding-top: 1rem;
+        max-width: 60%;
+        width: 1000px;
+        margin: 0 auto;
+        background: url("../assets/wbg.jpg") repeat;
+        z-index: 1;
+        .board_inputting{
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            .comment_inputting_box{
+                margin-top: 1rem;
+                font-size: 0.8rem;
+                .submit_reset_btn{
+                  padding-top: 1rem;
+                  margin-bottom: 5rem;
+                }
             }
-        }
     }
     .comment_item{
-        width: 60%;
-        margin: 0 10% 0 20%;
+        // width: 60%;
+        // margin: 0 10% 0 20%;
+        margin: 1rem auto 0.8rem;
         padding: 1rem 1rem 0 0;
-        min-height: 15vh;  
+        // min-height: 10vh;  
         overflow: hidden;
          .avatar{
               float: left;
