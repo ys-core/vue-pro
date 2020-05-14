@@ -1,6 +1,7 @@
 <template>
   <div class="footer">
-    {{msg}}
+    <span>{{ msg }}</span><br />
+	<a>{{ ICP }}</a>
   </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   name: 'footer',
   data () {
     return {
-      msg: 'yongsonglee.top@2017-2020. 版权归前端小智所有.'
+      msg: 'yongsonglee.top@2017-2020 | 版权归前端小智所有.',
+	  ICP: '苏ICP备20005151号-1'
     }
   }
 }
@@ -23,8 +25,12 @@ export default {
     min-height: 8vh;
     background: black;
     color: white;
-    font-size: 0.8rem;
+	padding-top:2vh;
+    font-size: 0.7rem;
     text-align: center;
-    line-height: 8vh;
+    line-height: 3vh;
+	a{
+		color:lightblue;
+	}
 }
 </style>
