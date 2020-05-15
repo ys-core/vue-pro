@@ -1,8 +1,7 @@
 <template>
   <div class="blog_warpper animated zoomIn">
     <left-nav />
-    <div class="blog_core">
-        <div class="blog_nav">
+	<div class="blog_nav">
             <li @click="loadingData()">All</li>
             <li @click="submitCategory('React')">React</li>
             <li @click="submitCategory('Vuejs')">Vuejs</li>
@@ -13,7 +12,9 @@
             <li @click="submitCategory('Linux')">Linux</li>
             <li @click="submitCategory('NodeJs')">NodeJs</li>
             <li @click="submitCategory('Other')">Other..</li>
-        </div>
+    </div>
+    <div class="blog_core">
+        
         <!-- <hr /> -->
         <div v-for="(article,index) in articles"  :key="index" class="blog bounceInUp">
           <div v-if="article.showYear" class="year"><h1>{{article.showYear ? article.createDate.substring(0,4)+'年' : ''}}</h1></div>
@@ -120,13 +121,7 @@ export default {
     // background: rgba(236, 142, 126, 0.9);
 	 background: url("../assets/wbg.jpg") repeat;
      font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
-     .blog_core{
-		width: 1000px;
-        min-height: 100vh;
-        margin: 0 auto;
-        padding-bottom: 2rem;
-        /* box-shadow: inset 0 1rem 2rem gray;*/    /* #abb8c4a6 */
-        .blog_nav{
+	 .blog_nav{
             position: sticky;
             padding: 5rem 0 2rem 0;
             top: 0;
@@ -134,6 +129,7 @@ export default {
             align-items: center;
             justify-content: center;
             height: 2rem;
+			background-image: url("../images/s2.jpg");
             z-index: 1000;
             // box-shadow: inset 0px 28px 40px #76c8d1;
             // background-image: linear-gradient(to bottom right, rgb(229, 255, 255), rgb(214, 227, 230));
@@ -153,7 +149,14 @@ export default {
                 // text-shadow: 0.12rem 0.28rem rgb(128, 42, 8);
                 /* font-size: 0.9rem; */
             }
-        }
+     }
+     .blog_core{
+		width: 1000px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+        /* box-shadow: inset 0 1rem 2rem gray;*/    /* #abb8c4a6 */
+        
         .blog{   
               padding-left: 6rem;
               margin: 2rem 0 3rem 0;
@@ -183,11 +186,7 @@ export default {
 @media only screen and (max-width:540px){
 .blog_warpper{
      font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
-     .blog_core{
-        min-height: 100vh;
-        padding-bottom: 2rem;
-        box-shadow: inset 0 0 40rem #abb8c4a6;    /* #abb8c4a6 */
-        .blog_nav{
+	 .blog_nav{
             position: sticky;
             padding: 5rem 0 2rem 0;
             top: 0;
@@ -195,8 +194,7 @@ export default {
             align-items: center;
             justify-content: center;
             height: 2rem;
-            box-shadow: inset 0px 28px 40px #76c8d1;
-            background-image: linear-gradient(to bottom right, rgb(229, 255, 255), rgb(214, 227, 230));
+			background-image: url("../images/s2.jpg");
              li {
                 display: inline-block;
                 list-style-type: none;
@@ -206,10 +204,14 @@ export default {
                 font-size: 0.6rem;
               
             }
-        }
+     }
+     .blog_core{
+        min-height: 100vh;
+        padding-bottom: 2rem;
+        box-shadow: inset 0 0 40rem #abb8c4a6;    /* #abb8c4a6 */
         .blog{   
               padding-left: 2rem;
-              margin: 2rem 0 3rem 0;
+              margin: 0 0 3rem 0;
               font-size: 0.7rem;
               .year{
                       position: relative;

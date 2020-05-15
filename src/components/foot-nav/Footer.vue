@@ -21,14 +21,13 @@ export default {
 <style scoped>
 .footer{
     width: 100%;
-    margin: 0 auto;
+    margin: 1rem auto 2rem;
     min-height: 8vh;
-    background: black;
-    color: white;
 	padding-top:2vh;
     font-size: 0.7rem;
     text-align: center;
     line-height: 3vh;
+	background: url("../../assets/wbg.jpg") 100% 100% repeat;
 	a{
 		color:lightblue;
 	}
