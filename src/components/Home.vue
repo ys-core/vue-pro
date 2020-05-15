@@ -15,23 +15,22 @@
                     <li><router-link to="more">更多..</router-link></li>
                 </ul>
             </div>
-             <div class="core-item1">
-                 <p>真正的朋友，懂得沉默，懂得等待，他知道你想跟他说的话自然会跟他说，他会对你的好适可而止，它知道你好的比坏的多，但永远不会告诉你你有多好，就像他永远不会告诉你他有多爱你一样。时间把人划分成一个又一个圈，只有永远和你站在同一个圈子里的人，才能成为你可以守护一生的朋友。</p>
+             <div class="core-item1"> <p>真正的朋友，懂得沉默，懂得等待，他知道你想跟他说的话自然会跟他说，他会对你的好适可而止，它知道你好的比坏的多，但永远不会告诉你你有多好，就像他永远不会告诉你他有多爱你一样。时间把人划分成一个又一个圈，只有永远和你站在同一个圈子里的人，才能成为你可以守护一生的朋友。</p>
             </div>
     </div>
     <div class="section homepage-2">
-      <div class="core-item2">
-                 <p>黄昏是此岸，是破晓前最飘逸的伏笔；黄昏是彼岸，是破灭前最惬意的结局。此岸，彼岸，连接起来，便是整个人生。笑叹红尘，东边，谁在为谁谱着歌；西边，依旧黄昏，烟云而过。</p>
+      <div class="core-item2">     <p>黄昏是此岸，是破晓前最飘逸的伏笔；黄昏是彼岸，是破灭前最惬意的结局。此岸，彼岸，连接起来，便是整个人生。笑叹红尘，东边，谁在为谁谱着歌；西边，依旧黄昏，烟云而过。</p>
+	  <p>也许，我们总是认为生活平淡无比，当有色彩光临我们的生活时，无非就是过份的苦难和极少的快乐。每当这时候，乐观的人会用自己的方法，让自己在苦难中占优势，而悲伤的人只会在苦难中越陷越深，不能自拔。我不知道在这个时候你们有想过用数学符号来使我们的苦难消失，使我们的快乐更多吗？</p>
             </div>
     </div>
      <div class="section homepage-3">
       <div class="core-item3">
-                 <p>黄昏就像是我们生命的隐语，它引导着人们去领悟人生那一份平静与淡泊。日暮的宁静如一束星光让人心灵寂寞而平和，黄昏不代表哀伤。我喜爱黄昏，它的光芒，它那柔和又充满希望的光芒，它以最美的景致结束了一天。</p>
+	  <p>黄昏就像是我们生命的隐语，它引导着人们去领悟人生那一份平静与淡泊。日暮的宁静如一束星光让人心灵寂寞而平和，黄昏不代表哀伤。我喜爱黄昏，它的光芒，它那柔和又充满希望的光芒，它以最美的景致结束了一天。</p>
             </div>
     </div>
      <div class="section homepage-4">
       <div class="core-item4">
-                 <p>梦想像一粒种子，种在“心”的土壤里，尽管它很小，却可以生根开花，假如没有梦想，就像生活在荒凉的戈壁，冷冷清清，没有活力。有了梦想，也就有了追求，有了奋斗的目标，有了梦想，就有了动力。它会催人前进，也许在实现梦想的道路中，会遇到无数的挫折，但没关系，跌倒了自己爬起来，为自己的梦想而前进，毕竟前途是自己创造出来的。 </p>
+	  <p>梦想像一粒种子，种在“心”的土壤里，尽管它很小，却可以生根开花，假如没有梦想，就像生活在荒凉的戈壁，冷冷清清，没有活力。有了梦想，也就有了追求，有了奋斗的目标，有了梦想，就有了动力。它会催人前进，也许在实现梦想的道路中，会遇到无数的挫折，但没关系，跌倒了自己爬起来，为自己的梦想而前进，毕竟前途是自己创造出来的。 </p>
             </div>
     </div>
   </full-page>
@@ -184,6 +183,7 @@ body {
 }
 div[class*='homepage']{
     position: relative;
+	background-size: 100% 100%;
 }
 .homepage-1{
     background: url("../images/bulb.png")  no-repeat;
@@ -201,9 +201,13 @@ div[class*='core-item']{
     font-family: ceil;
     line-height: 1.5rem;
 }
+
 div[class*='core-item']:hover{
-	background: silver;
-	
+	background: transparent;
+	text-shadow: 1px 1px lightgreen;
+}
+div[class*='core-item'] p{
+	text-indent: 2em;
 }
 .core-item1{
     border: 1px solid #fff;
@@ -219,11 +223,12 @@ div[class*='core-item']:hover{
 }
 .core-item2{
     border: 1px solid lightblue;
-    width: 20%;
+    width: 40%;
     padding: 26px 35px 30px 22px;
     position: absolute;
-    bottom: 44vh;
-    left: 4vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     color:#fff;
     box-shadow: 0 0 0 #fff;
     animation: borderAnimation 6s infinite linear;
@@ -310,12 +315,16 @@ div[class*='core-item']{
     font-family: ceil;
     line-height: 1.5rem;
 }
+div[class*='core-item'] p{
+	text-indent: 2em;
+}
 .core-item1{
     border: 1px solid #fff;
     width: 80%;
     position: absolute;
-    bottom: 40vh;
-    left: 10%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     padding: 0.5rem 2rem;
     color:#fff;
     box-shadow: 0 0 0 #fff;
@@ -326,8 +335,9 @@ div[class*='core-item']{
     border: 1px solid lightblue;
     width: 80%;
     position: absolute;
-    bottom: 44vh;
-    left: 10%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     padding: 0.5rem 2rem;
     color:#fff;
     box-shadow: 0 0 0 #fff;
@@ -338,8 +348,9 @@ div[class*='core-item']{
     border: 1px solid #fff;
     width: 80%;
     position: absolute;
-    top: 14vh;
-    right: 10%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     padding: 0.5rem 2rem;
     color:#fff;
     box-shadow: 0 0 0 #fff;
@@ -350,8 +361,9 @@ div[class*='core-item']{
     border: 1px solid #fff;
     width: 80%;
     position: absolute;
-    top: 14vh;
-    left: 10%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     padding: 0.5rem 2rem;
     color:#fff;
     box-shadow: 0 0 0 #fff;
