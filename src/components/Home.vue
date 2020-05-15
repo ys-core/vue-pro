@@ -3,7 +3,7 @@
 <div class="home">
 
 <full-page ref="fullpage" :options="options" id="fullpage">
-    <div class="section homepage-1">
+    <div class="section homepage-1 animated zoomIn">
             <div class="left-nav">
                     <ul>
                     <li><router-link to="/">主页</router-link></li>
@@ -200,6 +200,10 @@ div[class*='homepage']{
 div[class*='core-item']{
     font-family: ceil;
     line-height: 1.5rem;
+}
+div[class*='core-item']:hover{
+	background: silver;
+	
 }
 .core-item1{
     border: 1px solid #fff;
