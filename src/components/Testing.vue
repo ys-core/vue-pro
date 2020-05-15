@@ -51,27 +51,6 @@ export default {
     return {
       articles: [],
       footerShowing: false,
-       swiperOption: {
-            // direction: 'vertical',
-            // slidesPerView: 1,
-            // effect: 'fade',   // fade, cube , coverflow , flip 
-            // speed: 800,
-            // spaceBetween: 0,
-            // mousewheel: {
-            //     forceToAxis: false,
-            //     releaseOnEdges: false,
-            //     invert: false,
-            //     sensitivity: 100,
-            // },
-            // autoplay: {
-            //     delay: 2000,	
-            // },
-            // pagination: {
-            //     el: '.swiper-pagination',
-            //     // clickable: true,
-            //     type: 'bullets'
-            // },
-       }
     }
   },
   computed:{

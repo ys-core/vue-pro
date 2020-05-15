@@ -14,14 +14,14 @@ import ElementUI from 'element-ui';    // element-ui
 import 'element-ui/lib/theme-chalk/index.css';
 import locale from 'element-ui/lib/locale/lang/en'
 
-// import echarts from 'echarts'     // echarts  
-// Vue.prototype.$echarts = echarts
-
 import axios from 'axios'                        // axios
 Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
+import VueFullPage from 'vue-fullpage.js'
+
+Vue.use(VueFullPage);
 Vue.use(Animated)
 Vue.use(ViewUI)
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 },{locale});
