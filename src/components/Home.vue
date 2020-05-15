@@ -54,7 +54,7 @@ export default {
       options:{
             licenseKey: 'YOUR_KEY_HEERE',
             menu: '#menu',
-            anchors: ['', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],    //['page1', 'page2', 'page3','page4'],
+            anchors: ['', '', '', '', ''],    //['page1', 'page2', 'page3','page4'],
             sectionsColor: ['#41b883', '#ff5f45', '#0798ec','#811968'],
            
 
