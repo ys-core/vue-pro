@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <span>{{ msg }}</span><br />
-	<a>{{ ICP }}</a>
+	  <span>{{ ICP }}</span>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       msg: 'yongsonglee.top@2017-2020 | 版权归前端小智所有.',
-	  ICP: '苏ICP备20005151号-1'
+	    ICP: '苏ICP备20005151号-1'
     }
   }
 }
@@ -21,15 +21,17 @@ export default {
 <style scoped>
 .footer{
     width: 100%;
-    margin: 1rem auto 2rem;
+    /* margin: 1rem auto 2rem; */
     min-height: 8vh;
-	padding-top:2vh;
-    font-size: 0.7rem;
+	  padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 0.8rem;
     text-align: center;
-    line-height: 3vh;
-	background: url("../../assets/wbg.jpg") 100% 100% repeat;
-	a{
-		color:lightblue;
-	}
+    color: black;
+    line-height: 2rem;
+    background: url("../../assets/wbg.jpg") 100% 100% repeat;
+    a{
+      color: lightblue;
+    }
 }
 </style>

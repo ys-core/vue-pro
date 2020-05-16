@@ -12,7 +12,7 @@
                     <li><router-link to="mood">心情</router-link></li>
                     <li><router-link to="board">留言板</router-link></li>
                     <li><router-link target="_blank" to="about">关于</router-link></li>
-                    <li><router-link to="more">更多..</router-link></li>
+                    <li><router-link to="contact">更多..</router-link></li>
                 </ul>
             </div>
              <div class="core-item1"> <p>真正的朋友，懂得沉默，懂得等待，他知道你想跟他说的话自然会跟他说，他会对你的好适可而止，它知道你好的比坏的多，但永远不会告诉你你有多好，就像他永远不会告诉你他有多爱你一样。时间把人划分成一个又一个圈，只有永远和你站在同一个圈子里的人，才能成为你可以守护一生的朋友。</p>

@@ -1,15 +1,15 @@
 <template>
   <div class="contact">
-     
-     <quill-editor 
-      v-model="content" 
-      ref="myQuillEditor" 
-      :options="editorOption" 
-      @blur="onEditorBlur($event)" @focus="onEditorFocus($event)"
-      @change="onEditorChange($event)">
-    </quill-editor>
-  
-
+      <quill-editor 
+        v-model="content" 
+        ref="myQuillEditor" 
+        :options="editorOption" 
+        @blur="onEditorBlur($event)" @focus="onEditorFocus($event)"
+        @change="onEditorChange($event)">
+      </quill-editor>
+      <div v-for="(item,index) in arr" :key="index" class="pic-bed">
+              <img src="https://www.helloimg.com/images/2020/05/15/055f97b45038f3b92.md.jpg" />
+      </div>
   </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
     return {
       inputs: '想说点什么呢?',
       content:null,
+      arr: [1,2,3,4,5,6,7,8,9,10],
       editorOption:{
 
       }
@@ -51,5 +52,8 @@ export default {
 .contact{
     width: 65%;
     margin: 0 auto;
+    .pic-bed{
+      margin: 0 auto;
+    }
 }
 </style>
