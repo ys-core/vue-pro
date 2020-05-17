@@ -7,9 +7,9 @@
         @blur="onEditorBlur($event)" @focus="onEditorFocus($event)"
         @change="onEditorChange($event)">
       </quill-editor>
-      <div v-for="(item,index) in arr" :key="index" class="pic-bed">
-              <img src="https://www.helloimg.com/images/2020/05/15/055f97b45038f3b92.md.jpg" />
-      </div>
+      <!-- <div v-for="(item,index) in arr" :key="index" class="pic-bed">
+                <img src="https://www.helloimg.com/images/2020/05/15/055f97b45038f3b92.md.jpg" />
+      </div> -->
   </div>
 </template>
 
@@ -53,6 +53,8 @@ export default {
     width: 65%;
     margin: 0 auto;
     .pic-bed{
+      
+      width: 100%;
       margin: 0 auto;
     }
 }
