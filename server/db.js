@@ -33,13 +33,21 @@ const userSchema = mongoose.Schema({
 /*
    the schema for all comments on article or comment board,  in /React/comments collection
 */
+
+const replySchema = mongoose.Schema({     // the reply to the article comments
+	time: Date,
+	from: String,
+	to: String,
+	comment: String
+})
 const commentSchema = mongoose.Schema({
 	username: String,
 	avatar: String,
 	commentDate: Date,
 	comment: String,
 	likes: Number,
-	dislikes: Number
+	dislikes: Number,
+	commentReplys: [replySchema]
 },{
 	collection:'comments'
 });
@@ -58,12 +66,7 @@ const noteSchema = mongoose.Schema({
 /*
    the schema for all articles , replys and comments, array nested array, in /React/articles collection
 */
-const replySchema = mongoose.Schema({     // the reply to the article comments
-	time: Date,
-	from: String,
-	to: String,
-	comment: String
-})
+
 const articleCommentSchema = mongoose.Schema({
 	time: Date,
 	from: String,

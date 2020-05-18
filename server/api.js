@@ -248,6 +248,24 @@ router.post('/add_article_comment',(req,res)=>{
 })
 
 /*
+	add a board reply  to /React/comments collection
+*/
+router.post('/add_board_reply',(req,res)=>{
+	
+	const { from , to, time, _id, comment } = req.body
+	console.log( from , to, time, _id, comment)
+	let new_board_reply = {	time, from, to, comment }
+	models.Comment.updateOne({  _id }, {'$push' : { commentReplys :  new_board_reply  }},(err,data)=>{
+		if(err){
+			console.log('add the board reply failed');
+			res.send({ status:'false' });
+		}else{
+			res.send({ status:'true' });
+		}
+	})
+})
+
+/*
 	add an article comment  reply to /React/articles collection
 */
 router.post('/article/add_comment_reply',(req,res)=>{

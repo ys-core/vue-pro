@@ -3,26 +3,6 @@
     <left-nav />
   <div class="board_inputting">
       <div class="comment_inputting_box">
-           <!-- <editor
-                    api-key="zz6kufduyz69ewv614r0rudtr2snd9pr3bzyeignjc1tgn5e"
-                    output-format="html"
-                    v-model="comment"
-                    onChange="contentChanged"
-                    @onSelectionChange="commentInputedChanged"
-                    :init="{
-                      height: 200,
-                      menubar: false,
-                      plugins: [
-                        'advlist autolink lists link image charmap print preview anchor',
-                        'searchreplace visualblocks code fullscreen',
-                        'insertdatetime media table paste code help wordcount emoticons'
-                      ],
-                      toolbar:
-                        'undo redo | formatselect | bold italic forecolor backcolor | \
-                        alignleft aligncenter alignright alignjustify code | \
-                        bullist numlist emoticons outdent indent | removeformat | help'
-                    }"
-           /> -->
               <quill-editor 
                     v-model="comment" 
                     ref="myQuillEditor" 
@@ -31,8 +11,16 @@
                     @change="onEditorChange($event)">
             </quill-editor>
           <div class="submit_reset_btn">
-            <Button type="success" @click="submitComment(logged_user)">留言</Button>
-            <Button type="error" @click="resetBoard">重置</Button>
+               <span v-if="isReplyState">
+                    <!-- <h3>你将要回复{{ comments[replyObj] ? comments[replyObj].username : replyTo }}, 请输入内容:</h3> -->
+                    <Button type="success" @click="submitReply(logged_user)">确认回复</Button>
+                    <Button type="error" @click="cancelReply(logged_user)">取消回复</Button>
+              </span>
+               <span v-else>
+                  <Button type="success" @click="submitComment(logged_user)">留言</Button>
+                  <Button type="error" @click="resetBoard">重置</Button>
+               </span>
+              
           </div>
       </div>
   </div>
@@ -50,6 +38,13 @@
             <li @click="updateThumbDown(item,index)"><Icon type="ios-thumbs-down" /> 差评:{{ item.dislikes ? item.dislikes : 0 }}</li>
             <li @click="updateThumbUp(item,index)"><Icon type="ios-thumbs-up" /> 点赞:{{ item.likes ? item.likes : 0 }}</li>
           </ul>
+            <div class="reply" v-for="reply in item.commentReplys">
+                <strong><span v-html="reply.comment"></span> </strong>  
+                 <span class="reply-nav">{{ reply.from }}@ {{ reply.to }} ##{{ reply.time ?  reply.time.toString().substring(0,10) : '' }}</span>
+                <span class="reply-nav">
+                    <li @click="replyComment( item,index,reply.from)"><Icon type="ios-create-outline" /> 回复 {{ reply.from }}</li>
+                </span>
+            </div>
         </div>
         <hr />
   </div>
@@ -75,19 +70,25 @@ export default {
       valueText: '',
       comment: '想说点什么呢..',
       comments: [],
-      footerShowing: false
+      footerShowing: false,
+      isReplyState: false,
+      replyObj : -1,
+      replyTo: '',
+      editorOption:{
+
+      }
     }
   },
   components:{
-    Footer,
-    // editor: Editor,
-    quillEditor,
-    LeftNav
+      Footer,
+      // editor: Editor,
+      quillEditor,
+      LeftNav
   },
   mounted(){
-    this.enableLoading()
-    this.loadingData()
-    this.disableLoading()
+      this.enableLoading()
+      this.loadingData()
+      this.disableLoading()
   },
   computed:{
     ...mapState([
@@ -182,21 +183,53 @@ export default {
         } 
       },
       resetBoard(){
-        this.comment = ''
-        // console.log('reset done')
+          this.comment = ''
       },
       randomColor(index){
-         let R = Math.floor(Math.random() * 255);
-         let G = Math.floor(Math.random() * 255);
-         let B = Math.floor(Math.random() * 255);
+          let R = Math.floor(Math.random() * 255);
+          let G = Math.floor(Math.random() * 255);
+          let B = Math.floor(Math.random() * 255);
           return {
             background: 'rgb(' + R + ',' + G + ',' + B + ')'
           }
       },
       replyBoardComment(item,index){
-
+          this.isReplyState = true
+          this.replyObj = index
+          this.replyTo = item.username
+          this.comment= "@" + item.username + ":"
       },
-     onEditorBlur(){//失去焦点事件
+     submitReply(logged_user){
+          let index = this.replyObj
+          let _id = this.comments[index]._id
+          let from  = logged_user
+          let time  = new Date()
+          let to = this.replyTo || this.comments[index].username
+          let comment = this.comment
+          if(from && to && comment){
+            this.$axios.post('/api/add_board_reply',{ from, to, _id, time, comment }).then(res => {
+                console.log(res.data.status)
+                if(res.data.status === 'ture'){
+                    this.cancelReply()
+                }
+            }).catch(err => {
+
+            })
+          }
+     },
+     cancelReply(logged_user){
+          this.isReplyState = false
+          this.comment = ""
+     } ,
+    replyComment(item,index,to){
+          this.replyTo = to
+          this.isReplyState = true
+          this.replyObj = index
+          this.comment= "@" + to  + ":"
+          // console.log(to)
+          
+    },
+    onEditorBlur(){//失去焦点事件
 
     },
     onEditorFocus(){//获得焦点事件
@@ -311,8 +344,26 @@ export default {
                         }
                     }
               }
+              .reply{
+                 font-family:Arial, Helvetica, sans-serif;
+                 font-size: 0.8rem;
+                 padding: 0.5rem 0 0.6rem 2rem;
+                 background: rgba(212, 182, 182, 0.1);
+                 .reply-nav{
+                      font-size: 0.6rem;
+                      line-height: 1em;
+                      color: blue;
+                      li{
+                        list-style-type: none;
+                        display: inline;
+                        &:hover{
+                            transform: scale(1.25);
+                            cursor: pointer;
+                        }
+                      }
+                 }
+              }
           }
-
     }
 }
 
@@ -371,6 +422,17 @@ export default {
                           text-decoration: underline;
                         }
                     }
+              }
+              .reply{
+                 font-family:Arial, Helvetica, sans-serif;
+                 font-size: 0.8rem;
+                 padding: 1rem ;
+                 background: rgba(212, 182, 182, 0.1);
+                 .reply-nav{
+                   font-size: 0.6rem;
+                   line-height: 1em;
+                   color: blue;
+                 }
               }
           }
 
