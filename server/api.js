@@ -251,13 +251,7 @@ router.post('/add_article_comment',(req,res)=>{
 	add a board reply  to /React/comments collection
 */
 router.post('/add_board_reply',(req,res)=>{
-	
 	const { from , to, time, _id, comment } = req.body
-<<<<<<< HEAD
-	// console.log( from , to, time, _id, comment)
-=======
-	console.log( from , to, time, _id, comment)
->>>>>>> 6b9cb47ad791b4e32832b0eb037ca74263463155
 	let new_board_reply = {	time, from, to, comment }
 	models.Comment.updateOne({  _id }, {'$push' : { commentReplys :  new_board_reply  }},(err,data)=>{
 		if(err){
