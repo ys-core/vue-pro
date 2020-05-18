@@ -253,7 +253,7 @@ router.post('/add_article_comment',(req,res)=>{
 router.post('/add_board_reply',(req,res)=>{
 	
 	const { from , to, time, _id, comment } = req.body
-	console.log( from , to, time, _id, comment)
+	// console.log( from , to, time, _id, comment)
 	let new_board_reply = {	time, from, to, comment }
 	models.Comment.updateOne({  _id }, {'$push' : { commentReplys :  new_board_reply  }},(err,data)=>{
 		if(err){
