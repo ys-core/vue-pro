@@ -464,7 +464,7 @@ router.post('/article/update_stars',(req,res)=>{
 
 //models.Mood.find({}).sort({commentDate: -1}).exec((err,data)=>{}
 router.get('/getAllMoods',(req,res)=>{
-	models.Mood.find({}).sort({'createDate':-1}).exec((err,data)=>{
+	models.Mood.find({}).sort({'contentDate':-1}).exec((err,data)=>{
 		if(err){
 			console.log("query articles error");
 			res.send({status:'false'});
