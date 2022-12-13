@@ -9,7 +9,7 @@
   "author": "Caden,Li",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "^5.7.4",
     "node-mailer": "^0.1.1",
     "nodemailer": "^6.3.1",
